@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameoverEventSheet</name>
+    <events>
+        <event-block sid="9380848657763306">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7226502654366276" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1740158679734934" type="TextScore">
+                    <param id="0" name="Text">round( FinalScore)</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="2635070255819105" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="1518709562237865" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="4803564435307492" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7782361941783807">
+                    <conditions>
+                        <condition id="10" name="Has product" sid="7707889055431806" type="Windows8">
+                            <param id="0" name="Product ID">product_id</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set visible" sid="582774067354343" type="Windows8Advertising">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1335510523047192">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1679004752326409" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9869311688925042" type="WonBaloon3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="416164398020357">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3150636299318673" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="5032713946367277" type="WonBaloon2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7602399117600852">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9685706819128927" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="808733474232075" type="WonBaloon1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5618203896949752">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7475052083188647" type="System">
+                            <param id="0" name="Variable">Success</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="8100632598716219" type="LevelsArray">
+                            <param id="0" name="X">SelectedLevel</param>
+                            <param id="1" name="Y">DifficultyLevel</param>
+                            <param id="2" name="Value">max(LevelsArray.At(SelectedLevel,DifficultyLevel),2+BaloonsHit)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="9203324534398974" type="LevelsArray">
+                            <param id="0" name="X">SelectedLevel+1</param>
+                            <param id="1" name="Y">DifficultyLevel</param>
+                            <param id="2" name="Value">max(LevelsArray.At(SelectedLevel+1,DifficultyLevel),1)</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="4439972483681065" type="WebStorage">
+                            <param id="0" name="Key">DataStoreName</param>
+                            <param id="1" name="Value">LevelsArray.AsJSON</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="205134513961813" type="ContinueText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="489585816856295" type="PlayAgainText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4605164378745856" type="WellDoneText1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8073540507471189" type="GameOverText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="231866862988847">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="224057756978954" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9436393841872385" type="ContinueText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3461791383540691" type="PlayAgainText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4517492562039893" type="WellDoneText1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="743634695719769" type="GameOverText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3121200707837426" type="System">
+                            <param id="0" name="Variable">TotalDistance</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="1819869765629112">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="4369305781615022" type="Keyboard" />
+                <condition id="3" name="On touched object" sid="8584770224745671" type="Touch">
+                    <param id="0" name="Object">PlayAgainText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>GAME OVER! Back to the level selection.</comment>
+                <event-block sid="6873855841103143">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="1135560919879466" type="PlayAgainText" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="3567670028571636" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="4969154134092985">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="836880571580088" type="Keyboard" />
+                <condition id="3" name="On touched object" sid="465160012444287" type="Touch">
+                    <param id="0" name="Object">ContinueText</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="4650837891244837" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;---------------- qui1&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>But if you want to continue...</comment>
+                <event-block any="1" sid="293653815656243">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1727176575474589" type="System">
+                            <param id="0" name="Variable">FullVersion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6254416400574976" type="System">
+                            <param id="0" name="Variable">SelectedLevel</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="2650019197220725" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;---------------- qui4 Continue text&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="8783263417978007" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;setting SelectedLevel. selected level is&quot; &amp; SelectedLevel</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5451385829462815" type="System">
+                            <param id="0" name="Variable">SelectedLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="3805446398258384" type="System">
+                            <param id="0" name="Layout">GameLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8640872039265301">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7533236303803395" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="9292662418650444" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;---------------- qui5&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="2223703863116141" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="7367642689676808" type="System">
+                            <param id="0" name="Layer">2</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="1083741482250483" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="7803128985287893">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9468566364844692" type="Keyboard">
+                    <param id="0" name="Key">8 (Backspace)</param>
+                </condition>
+                <condition id="3" name="On touched object" sid="7998351689684502" type="Touch">
+                    <param id="0" name="Object">BackArrow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="9946738567827741" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;---------------- qui6&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="7833567849126112" type="System">
+                    <param id="0" name="Layout">SelectLevelLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="127128997412877">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9310383872196873" type="Touch">
+                    <param id="0" name="Object">PurchaseTitle1</param>
+                </condition>
+                <condition id="3" name="On touched object" sid="3027061766768433" type="Touch">
+                    <param id="0" name="Object">PurchaseTitle2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="9412355890646727" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;---------------- qui7&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5690998366903351">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="7388335325198086" type="System">
+                            <param id="0" name="Layer">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="664095480253879" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;---------------- qui8&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="2069292224620344" type="System">
+                            <param id="0" name="Layout">WelcomeLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1123207568264616">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8747189943457831" type="Touch">
+                    <param id="0" name="Object">CancelPurchase</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="9143331894232115" type="System">
+                    <param id="0" name="Layer">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="4288649755564324" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;---------------- qui9&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4408711486450273" type="System">
+                    <param id="0" name="Layout">SelectLevelLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8818027091048238">
+            <conditions>
+                <condition id="0" name="Is Windows Phone app" sid="5845710079059117" type="WindowsPhone" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3621838509109443">
+                    <conditions>
+                        <condition id="2" name="On back" sid="1003677194472079" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6900498152237264" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

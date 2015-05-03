@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameEventSheet</name>
+    <events>
+        <variable comment="Probability to create a Teddy" constant="0" name="TeddyChances" sid="2125300938929976" static="0" type="number">0</variable>
+        <variable comment="Probability to crea an apple" constant="0" name="JumpChances" sid="7582063058341199" static="0" type="number">0</variable>
+        <variable comment="Probability to crea an apple" constant="0" name="SlowChances" sid="9159547863118792" static="0" type="number">0</variable>
+        <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="6697584694479224" static="0" type="number">0</variable>
+        <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="5755410159165852" static="0" type="number">0</variable>
+        <variable comment="Nunmbat of available super jumps" constant="0" name="SuperJumps" sid="370097841274924" static="0" type="number">3</variable>
+        <variable comment="The platforms scrolling speed" constant="0" name="GameSpeed" sid="9365587717515533" static="0" type="number">250</variable>
+        <variable comment="How often the scrolling speed increases" constant="0" name="IntervalSecs" sid="8286687176582798" static="0" type="number">26</variable>
+        <variable comment="Lenght of the level" constant="0" name="Timeout" sid="5892553950482386" static="0" type="number">90</variable>
+        <variable comment="Baloon hit in the level" constant="0" name="BaloonsHit" sid="6169272369178315" static="0" type="number">0</variable>
+        <variable comment="do you need explanations?" constant="0" name="FinalScore" sid="5858118431114176" static="0" type="number">0</variable>
+        <variable comment="Set to 1 if level completed successfully" constant="0" name="Success" sid="1845129002984168" static="0" type="number">0</variable>
+        <variable comment="Increase the platform width to help the children" constant="0" name="ChildrenHelp" sid="5320426739516478" static="0" type="number">100</variable>
+        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="7416061323176407" static="0" type="number">600</variable>
+        <comment>Initialize the layout properly</comment>
+        <event-group description="" sid="5566442665227407" title="Initialization and periodic events">
+            <sub-events>
+                <event-block sid="764812568663351">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9871110855758155" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4560653256649003" type="TiledBackgroundGame1">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1497682928348721" type="TiledBackgroundGame2">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="182018627877426" type="TiledBackgroundGame3">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1436056679201638" type="TiledBackgroundGame4">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3868540496824119" type="TiledBackgroundGame5">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8169703973898505" type="TiledBackgroundGame6">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2403221147414152" type="TiledBackgroundGame7">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5733822307490071" type="TiledBackgroundGame8">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4718855048617875" type="TiledBackgroundGame1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9481459120800049" type="TiledBackgroundGame2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3092729366855992" type="TiledBackgroundGame3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3073075706534395" type="TiledBackgroundGame4">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="5578034313344139" type="TiledBackgroundGame5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4190241915337287" type="TiledBackgroundGame6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="974584439600668" type="TiledBackgroundGame7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1948109918898389" type="TiledBackgroundGame8">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="5357829357672176" type="PlayerMiniature2">
+                            <param id="0" name="Frame number">DifficultyLevel</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8809993125313233" type="Block">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3238875319876245" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2335834529376262" type="System">
+                            <param id="0" name="Variable">CurrentDistance</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6398130923243962" type="System">
+                            <param id="0" name="Variable">SuperJumps</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9379463319099021" type="System">
+                            <param id="0" name="Variable">GameSpeed</param>
+                            <param id="1" name="Value">250 + SelectedLevel * 6</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5484742535481822" type="System">
+                            <param id="0" name="Variable">IntervalSecs</param>
+                            <param id="1" name="Value">26 - SelectedLevel</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7003923734325208" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1236924251323938" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9887479027980473" type="System">
+                            <param id="0" name="Variable">NextBlock</param>
+                            <param id="1" name="Value">600</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3592586007862615" type="System">
+                            <param id="0" name="Variable">Timeout</param>
+                            <param id="1" name="Value">90</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4974897015793548" type="System">
+                            <param id="0" name="Variable">Success</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="8691119060441434" type="Block">
+                            <param id="0" name="Speed">GameSpeed</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="2058247934911642" type="Player">
+                            <param id="0" name="Max Speed">GameSpeed</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4233046838120136" type="JumpsText">
+                            <param id="0" name="Text">SuperJumps</param>
+                        </action>
+                        <action id="0" name="Set text" sid="1891084221076663" type="TimeDisplay">
+                            <param id="0" name="Text">SelectedLevel</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6223873853556542" type="BaloonsText">
+                            <param id="0" name="Text">BaloonsHit</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4482120470671391">
+                            <conditions>
+                                <condition id="10" name="Has product" sid="543500631340567" type="Windows8">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set visible" sid="2040861360080161" type="Windows8Advertising">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2760067497001581">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1009446380964534" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="390243437349766" type="TiledBackgroundGame1">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4810416587855471">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5712388919784541" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="9698465641259241" type="TiledBackgroundGame2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5041902243052797">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="244440472161889" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="3189746301860485" type="TiledBackgroundGame3">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1050324715539336">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5739991531209472" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="8598220988359118" type="TiledBackgroundGame4">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4187463786061622">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7244974462379853" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="5410390881824017" type="TiledBackgroundGame5">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1478283889613386">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6410431689321757" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="1196110202724795" type="TiledBackgroundGame6">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9209438091597177">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3415389024794777" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="4396401221392835" type="TiledBackgroundGame7">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1178747479932958">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="849839494707712" type="System">
+                                    <param id="0" name="First value">SelectedLevel % 8</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="9575984893874027" type="TiledBackgroundGame8">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6474407351717949">
+                    <conditions>
+                        <condition id="0" name="Is Windows Phone app" sid="3497186278354008" type="WindowsPhone" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6344843985920885">
+                            <conditions>
+                                <condition id="2" name="On back" sid="6563203232585413" type="WindowsPhone" />
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="6098728714029639" type="System">
+                                    <param id="0" name="Layout">WelcomeLayout</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Wrap the scrolling background infinitely by moving it back after it&apos;s scrolled the width of the main image to the left.</comment>
+                <event-block sid="1979102630270855">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="1653910472338597" type="TiledBackgroundGame1">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">-Self.Width / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="7068272946122888" type="TiledBackgroundGame1">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="656733676958741" type="TiledBackgroundGame2">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="1939404697420988" type="TiledBackgroundGame3">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="189429659529663" type="TiledBackgroundGame4">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="4337983002476438" type="TiledBackgroundGame5">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="413829151861805" type="TiledBackgroundGame6">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="2394373539031684" type="TiledBackgroundGame7">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="4996632914508389" type="TiledBackgroundGame8">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Due to the acceleration of the platform movement, I need a trick to make sure the player doesn&apos;t get pushed off to the left of the screen.</comment>
+                <event-block any="1" sid="4288306444353142">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="3797154061701845" type="Player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">102</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="9919033351902" type="Player">
+                            <param id="0" name="Max Speed">max(GameSpeed,Player.Platform.MaxSpeed + 100*dt)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="455378048568744">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5223522590695225" type="System" />
+                        <condition id="-1" name="Compare X" sid="6296106317934844" type="Player">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">108</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="5995193773160409" type="Player">
+                            <param id="0" name="Max Speed">min(GameSpeed,Player.Platform.MaxSpeed - 100*dt)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4595115641015541">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6016612067547847" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="8991694188009489" type="System">
+                            <param id="0" name="Variable">Timeout</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9274299445519634" type="TimeDisplay">
+                            <param id="0" name="Text">Timeout</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8463631076433322" type="SpeedThumb">
+                            <param id="0" name="Angle">100 + (GameSpeed / 2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Let&apos;s now increase the scrolling speed</comment>
+                <event-block sid="2353290161895145">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="962278232946532" type="System">
+                            <param id="0" name="Interval (seconds)">IntervalSecs</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6718929053061734" type="System">
+                            <param id="0" name="Variable">GameSpeed</param>
+                            <param id="1" name="Value">GameSpeed + 25 + (DifficultyLevel*5)</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="4001174636590925" type="Block">
+                            <param id="0" name="Speed">GameSpeed</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="6463135502171493" type="System">
+                            <param id="0" name="Variable">IntervalSecs</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7173330371888912">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4733936970026044" type="System">
+                                    <param id="0" name="Variable">IntervalSecs</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7930865916571124" type="System">
+                                    <param id="0" name="Variable">IntervalSecs</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7515391931313386" title="Controls">
+            <sub-events>
+                <comment>While on floor, hold the &quot;run right&quot; control, so that the character keeps running.</comment>
+                <event-block sid="1285871132935485">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="2526696399268582" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="6860941130564864" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Keep incrementing the current and total distances, and update the points.</comment>
+                <event-block sid="2010753751990471">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="7701440691360898" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="7502839664762618" type="System">
+                            <param id="0" name="Variable">CurrentDistance</param>
+                            <param id="1" name="Value">Block.Bullet.Speed * dt</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="9186780029719139" type="System">
+                            <param id="0" name="Variable">TotalDistance</param>
+                            <param id="1" name="Value">Block.Bullet.Speed * dt</param>
+                        </action>
+                        <action id="0" name="Set text" sid="206969765902985" type="DistanceDisplay">
+                            <param id="0" name="Text">round(TotalDistance)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>On any user input at all, make the character jump (or double jump)</comment>
+                <event-block any="1" sid="987256584408881">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="2998936483603467" type="Touch" />
+                        <condition id="1" name="On any key pressed" sid="4309560234643501" type="Keyboard" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="1445117806732831" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="8446453067172524">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="3899944270767401" type="Touch" />
+                        <condition id="1" name="On any key pressed" sid="2811404550478853" type="Keyboard" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="9816376870650513">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="887381990626673" type="Player" />
+                                <condition behavior="Platform" id="4" name="Is falling" sid="5162543540780108" type="Player" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9861203680515132">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="7713761955500004" type="System">
+                                            <param id="0" name="First value">SuperJumps</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="4325385264759494" type="Player">
+                                            <param id="0" name="Vector Y">-500</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="8256895415852277" type="System">
+                                            <param id="0" name="Variable">SuperJumps</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="4073473233935292" type="JumpsText">
+                                            <param id="0" name="Text">SuperJumps</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="4490558288929225">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="7631691568328791" type="Touch">
+                            <param id="0" name="Object">BackArrow</param>
+                        </condition>
+                        <condition id="6" name="On object clicked" sid="8366335314606034" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">BackArrow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="4904707251465738" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="658097080765178" title="Block and powerups creation / Destruction">
+            <sub-events>
+                <event-block sid="2799533049560033">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6207754557278756" type="System">
+                            <param id="0" name="Interval (seconds)">28</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8182649152965852" type="System">
+                            <param id="0" name="Object to create">Baloon</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1898991649779034" type="Baloon">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4579637658336559" type="Baloon">
+                            <param id="0" name="X">LayoutWidth</param>
+                            <param id="1" name="Y">90</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Let&apos;s create it with a random width, height and angle, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
+                <event-block sid="7349910581532689">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2568636834077295" type="System">
+                            <param id="0" name="Variable">CurrentDistance</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">NextBlock</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="6917221852063444" type="System">
+                            <param id="0" name="Variable">CurrentDistance</param>
+                            <param id="1" name="Value">NextBlock</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1148076090221919" type="System">
+                            <param id="0" name="Object to create">Block</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="4142774079342812" type="Block">
+                            <param id="0" name="Width">160 + random(-5*SelectedLevel,300 - 5*SelectedLevel) + ChildrenHelp</param>
+                            <param id="1" name="Height">200 + random(150)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2979589778373526" type="Block">
+                            <param id="0" name="X">LayoutWidth</param>
+                            <param id="1" name="Y">LayoutHeight - Self.Height + 150</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="5994710481620257" type="Block">
+                            <param id="0" name="Degrees">random(-9,9)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4635261879046078" type="Block">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4794508265071065" type="System">
+                            <param id="0" name="Variable">NextBlock</param>
+                            <param id="1" name="Value">Block.Width + 30 + random(230)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3622813733113165" type="System">
+                            <param id="0" name="Variable">TeddyChances</param>
+                            <param id="1" name="Value">floor(random(4+SelectedLevel))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="35734764153948" type="System">
+                            <param id="0" name="Variable">JumpChances</param>
+                            <param id="1" name="Value">floor(random(10 + SelectedLevel/3))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="214087496219484" type="System">
+                            <param id="0" name="Variable">SlowChances</param>
+                            <param id="1" name="Value">floor(random(13 + SelectedLevel/3))</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="1588013383226608" type="Block">
+                            <param id="0" name="Speed">GameSpeed</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>And now le&apos;ts see if it is time to display any powerup</comment>
+                        <event-block sid="4550415983001738">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7229749791374382" type="System">
+                                    <param id="0" name="First value">TeddyChances</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1289082363223926" type="System">
+                                    <param id="0" name="Object to create">Teddy</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9815240653091617" type="Teddy">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="2578007580229867" type="Teddy">
+                                    <param id="0" name="Speed">200 + random(-100,100)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="8748730967516412" type="Teddy">
+                                    <param id="0" name="X">LayoutWidth</param>
+                                    <param id="1" name="Y">LayoutHeight- Block.Height +50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5728103807090394">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="236573955979601" type="System">
+                                    <param id="0" name="First value">JumpChances</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2215929627456868" type="System">
+                                    <param id="0" name="Object to create">Jump</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="6923068187733969" type="Jump">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="5099318345715784" type="Jump">
+                                    <param id="0" name="Speed">300 + random(-100,100)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="7104808038541476" type="Jump">
+                                    <param id="0" name="X">LayoutWidth</param>
+                                    <param id="1" name="Y">LayoutHeight- Block.Height + 50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6273207530391597">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1933152135616316" type="System">
+                                    <param id="0" name="First value">SlowChances</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="5826654583766269" type="System">
+                                    <param id="0" name="Variable">GameSpeed</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">350</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="7024677161126212" type="System">
+                                    <param id="0" name="Object to create">Turtle</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2807400890588828" type="Turtle">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="6393278812741903" type="Turtle">
+                                    <param id="0" name="X">LayoutWidth</param>
+                                    <param id="1" name="Y">LayoutHeight- Block.Height + 50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
+                <event-block sid="8753914311992549">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="825241808841597" type="Block">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8168062548315097" type="Block" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5481385948326657" title="Collisions">
+            <sub-events>
+                <event-block sid="2554019260919294">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4963246061716789" type="Player">
+                            <param id="0" name="Object">Teddy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8577842068510706" type="Teddy" />
+                        <action id="-10" name="Add to" sid="7722706574397625" type="System">
+                            <param id="0" name="Variable">TotalDistance</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4826551340834552" type="DistanceDisplay">
+                            <param id="0" name="Text">round(TotalDistance)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7174903802042175">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6897814000992561" type="Player">
+                            <param id="0" name="Object">Jump</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="6259500272779226" type="System">
+                            <param id="0" name="Variable">SuperJumps</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="401288990618294" type="Jump" />
+                        <action id="0" name="Set text" sid="7438914902676772" type="JumpsText">
+                            <param id="0" name="Text">SuperJumps</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3782788790597887">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2385753621886639" type="Player">
+                            <param id="0" name="Object">Turtle</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3865851996756586" type="Turtle" />
+                        <action id="-11" name="Subtract from" sid="3748448290333139" type="System">
+                            <param id="0" name="Variable">GameSpeed</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6338687262831358" type="System">
+                            <param id="0" name="Variable">GameSpeed</param>
+                            <param id="1" name="Value">max(250 + SelectedLevel * 10,GameSpeed)</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="7800430122697429" type="Player">
+                            <param id="0" name="Max Speed">GameSpeed</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="3508265145241196" type="Block">
+                            <param id="0" name="Speed">GameSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1819417241984965">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5832877214382363" type="Player">
+                            <param id="0" name="Object">Baloon</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8602212056082292" type="Baloon" />
+                        <action id="-10" name="Add to" sid="7628949611643839" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="1698489903772125" type="BaloonsText">
+                            <param id="0" name="Text">BaloonsHit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="6900321972226809" type="System">
+                            <param id="0" name="Variable">TotalDistance</param>
+                            <param id="1" name="Value">2000</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>GAME OVER MAN!!!</comment>
+        <event-block any="1" sid="1802476989821626">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="4653038122687404" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+                <condition id="-1" name="Compare X" sid="104349113913961" type="Player">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2579442733035932" type="System">
+                    <param id="0" name="Variable">FinalScore</param>
+                    <param id="1" name="Value">round(TotalDistance)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9863830841688953">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1956196389051063" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">HighScoresArray.At(2,1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="191924087954488" type="System">
+                            <param id="0" name="Layout">SaveNameLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3345091305916088">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="4088626971335194" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="444333948533161" type="System">
+                            <param id="0" name="Layout">GameoverLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="4589928024438516">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="890935100490797" type="System">
+                    <param id="0" name="Variable">Timeout</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3709633673104262" type="System">
+                    <param id="0" name="Variable">BaloonsHit</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9415057599021132">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5620101169928874" type="System">
+                            <param id="0" name="Variable">SelectedLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">14</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7096560308855214" type="System">
+                            <param id="0" name="Variable">Success</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7395296770700948" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Value">round(TotalDistance)</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="4702797823937935" type="System">
+                            <param id="0" name="Layout">CompletedLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6689223480266686">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8856965914467191" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1280545630081007" type="System">
+                            <param id="0" name="Variable">Success</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="475779551605804" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Value">round(TotalDistance)</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="8690149852121384" type="System">
+                            <param id="0" name="Layout">GameoverLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6840630110661968">
+            <conditions>
+                <condition id="0" name="Is Windows Phone app" sid="2599962909986346" type="WindowsPhone" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2476562201805527">
+                    <conditions>
+                        <condition id="2" name="On back" sid="624137274269268" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5668807644413627" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

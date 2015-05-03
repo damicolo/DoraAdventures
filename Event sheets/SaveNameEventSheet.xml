@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SaveNameEventSheet</name>
+    <events>
+        <event-block sid="614210404796471">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1009802686634948" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1914970688490566" type="TextScore">
+                    <param id="0" name="Text">round( FinalScore)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="8501259456110722">
+                    <conditions>
+                        <condition id="10" name="Has product" sid="7716102530309828" type="Windows8">
+                            <param id="0" name="Product ID">product_id</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set visible" sid="7703000973488751" type="Windows8Advertising">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6864964071950483">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9278361685536902" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="7476488649080202" type="WonBaloon3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6586482808910813">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6740742092427287" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="1932419511269417" type="WonBaloon2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="234105453303535">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7466080531570609" type="System">
+                            <param id="0" name="Variable">BaloonsHit</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="8926129328025129" type="WonBaloon1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7776914999164158">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3018228734917688" type="System">
+                            <param id="0" name="Variable">Success</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="9863012003960046" type="LevelsArray">
+                            <param id="0" name="X">SelectedLevel</param>
+                            <param id="1" name="Y">DifficultyLevel</param>
+                            <param id="2" name="Value">max(LevelsArray.At(SelectedLevel,DifficultyLevel),2+BaloonsHit)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="2868022812647161" type="LevelsArray">
+                            <param id="0" name="X">SelectedLevel+1</param>
+                            <param id="1" name="Y">DifficultyLevel</param>
+                            <param id="2" name="Value">max(LevelsArray.At(SelectedLevel+1,DifficultyLevel),1)</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="4346687143509955" type="WebStorage">
+                            <param id="0" name="Key">DataStoreName</param>
+                            <param id="1" name="Value">LevelsArray.AsJSON</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="6768277979692142" type="ContinueText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4208840000350048" type="PlayAgainText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1467489125300183" type="WellDoneText1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="755157799561887" type="GameOverText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1991736440284169">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3279406762853672" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9058700936290503" type="ContinueText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2146593767145487" type="PlayAgainText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="683996608270826" type="WellDoneText1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3815894940517775" type="GameOverText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3536725218899545" type="System">
+                            <param id="0" name="Variable">TotalDistance</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="7191450864479095">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6270485674556686" type="Touch">
+                    <param id="0" name="Object">PlayAgainText</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4031322512766546" type="System">
+                    <param id="0" name="Layout">SelectLevelLayout</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>GAME OVER! Back to the level selection.</comment>
+                <event-block sid="5001959959693891">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="6702131980147093" type="PlayAgainText" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="7675984280223633" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="3736643865424566">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5775997385844877" type="Touch">
+                    <param id="0" name="Object">BackArrow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3383817884781637" type="System">
+                    <param id="0" name="Layout">SelectLevelLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="365030694583661">
+            <conditions>
+                <condition id="0" name="Is Windows Phone app" sid="4474108235040634" type="WindowsPhone" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="914993995248976">
+                    <conditions>
+                        <condition id="2" name="On back" sid="1742460993562275" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6977051533657781" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8461297386044197">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3250742401454966" type="Touch">
+                    <param id="0" name="Object">SaveText</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="2821716662751437" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Want to save name &quot;  &amp; FinalScore</param>
+                </action>
+                <action id="0" name="Call function" sid="6484148117003339" type="Function">
+                    <param id="0" name="Name">&quot;InsertName&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-2" name="Go to layout" sid="351979538950522" type="System">
+                    <param id="0" name="Layout">HighScoresLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6900492117102353">
+            <conditions>
+                <condition id="0" name="On function" sid="1498869443423211" type="Function">
+                    <param id="0" name="Name">&quot;InsertName&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="9030649056823874" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;SAVING NAME &quot;  &amp; FinalScore</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>GOLD!!!</comment>
+                <event-block sid="2638833955950055">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1035542899027811" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">HighScoresArray.At(0,1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="9960327305547642" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;GOLD&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="8288906680403026" type="HighScoresArray">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">HighScoresArray.At(1,0)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="2280936773356631" type="HighScoresArray">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">HighScoresArray.At(1,1)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="422034029209445" type="HighScoresArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">HighScoresArray.At(0,0)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="1037441919083738" type="HighScoresArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">HighScoresArray.At(0,1)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="5117060918669854" type="HighScoresArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">HighScoreTextBox.Text</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="2195381285845271" type="HighScoresArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">FinalScore</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="6712954817016319" type="WebStorage">
+                            <param id="0" name="Key">HighScoreStoreName</param>
+                            <param id="1" name="Value">HighScoresArray.AsJSON</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Silver</comment>
+                <event-block sid="9980259136170806">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8784012012975425" type="System" />
+                        <condition id="-14" name="Compare variable" sid="5784739732192704" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">HighScoresArray.At(1,1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="3638936687001283" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;SILVER&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="7312084910790738" type="HighScoresArray">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">HighScoresArray.At(1,0)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="4948287946852096" type="HighScoresArray">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">HighScoresArray.At(1,1)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="2748354959767826" type="HighScoresArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">HighScoreTextBox.Text</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="6884839111504232" type="HighScoresArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">FinalScore</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="4222790637243247" type="WebStorage">
+                            <param id="0" name="Key">HighScoreStoreName</param>
+                            <param id="1" name="Value">HighScoresArray.AsJSON</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Bronze</comment>
+                <event-block sid="6963950620600615">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3036187791207691" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="6349389715319969" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;BRONZE&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="8083689758564691" type="HighScoresArray">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">HighScoreTextBox.Text</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="6239198416559813" type="HighScoresArray">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">FinalScore</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="6365462303818845" type="WebStorage">
+                            <param id="0" name="Key">HighScoreStoreName</param>
+                            <param id="1" name="Value">HighScoresArray.AsJSON</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1204831571758033">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5939845965543947" type="Touch">
+                    <param id="0" name="Object">VKLetter</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="5607495339860588" type="HighScoreTextBox">
+                    <param id="0" name="Text">HighScoreTextBox.Text &amp; VKLetter.Letter</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

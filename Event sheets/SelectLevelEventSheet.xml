@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SelectLevelEventSheet</name>
+    <events>
+        <variable constant="0" name="SelectedLevel" sid="424349576469572" static="0" type="number">0</variable>
+        <variable constant="0" name="DataStoreName" sid="9083945385726142" static="0" type="text">BartSkateManiaSaveData</variable>
+        <variable constant="0" name="MaxLevel" sid="627658805249813" static="0" type="number">3</variable>
+        <event-block sid="4407282084773056">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8855929426203162" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="2038591798313312" type="PlayerMiniature">
+                    <param id="0" name="Frame number">DifficultyLevel</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1149197239650464" type="BuyToUnlock1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5673394400088545">
+                    <conditions>
+                        <condition id="10" name="Has product" sid="7056888630272264" type="Windows8">
+                            <param id="0" name="Product ID">product_id</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set visible" sid="8375872865658444" type="Windows8Advertising">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5120891805633942">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="4655469974970632" type="WebStorage">
+                            <param id="0" name="Key">DataStoreName</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Load" sid="3602394787229208" type="LevelsArray">
+                            <param id="0" name="JSON">WebStorage.LocalValue(DataStoreName)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5104904770014924">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1365725457154704" type="System" />
+                <condition id="-11" name="For Each" sid="5087258078220556" type="System">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set at XY" sid="9596696701844094" type="LevelsArray">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">max(1,LevelsArray.At(0,0))</param>
+                </action>
+                <action id="3" name="Set at XY" sid="9532897196316594" type="LevelsArray">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">max(1,LevelsArray.At(0,1))</param>
+                </action>
+                <action id="3" name="Set at XY" sid="2327116463695673" type="LevelsArray">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">2</param>
+                    <param id="2" name="Value">max(1,LevelsArray.At(0,2))</param>
+                </action>
+                <action id="5" name="Set frame" sid="6792104082768901" type="Sprite">
+                    <param id="0" name="Frame number">LevelsArray.At(Sprite.TheIndex,DifficultyLevel)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="8365352743073175" title="IAP management">
+            <sub-events>
+                <event-block sid="3543384107309558">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3682667816968603" type="Touch">
+                            <param id="0" name="Object">BuyToUnlock1</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="2430005676548522" type="BuyToUnlock1" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="3599903610508747" type="System">
+                            <param id="0" name="Layout">WelcomeLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="6939092320787677">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3740297379648819" type="Touch">
+                            <param id="0" name="Object">BackArrowSelectLevel</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6840794714429395" type="System">
+                            <param id="0" name="Layout">WelcomeLayout</param>
+                        </action>
+                        <action id="14" name="Log" sid="2865995869478476" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;------------- Going Back Mouse&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>A level icon was clicked</comment>
+        <event-block any="1" sid="6706918001594449">
+            <conditions>
+                <condition id="3" name="On touched object" sid="831826497806082" type="Touch">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6191604457730136" type="System">
+                    <param id="0" name="Variable">SelectedLevel</param>
+                    <param id="1" name="Value">Sprite.TheIndex</param>
+                </action>
+                <action id="14" name="Log" sid="5419291072951537" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;----------- Clicked sprite event&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>If this is the unlocked version or a low game level was required.... GO ON!</comment>
+                <event-block any="1" sid="4822524917085128">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8492022032719189" type="System">
+                            <param id="0" name="Variable">FullVersion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9109135188515693" type="System">
+                            <param id="0" name="Variable">SelectedLevel</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6958639680649498">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="5301006992625995" type="LevelsArray">
+                                    <param id="0" name="X">Sprite.TheIndex</param>
+                                    <param id="1" name="Y">DifficultyLevel</param>
+                                    <param id="2" name="Comparison">4</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="2165868546288211" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;------------- Going to Layout &quot; </param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7778589537367044" type="System">
+                                    <param id="0" name="Variable">TotalDistance</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="3230967259138234" type="System">
+                                    <param id="0" name="Layout">GameLayout</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Otherwise... Show the Buy proposal string</comment>
+                <event-block sid="3197620618788531">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8241023878457416" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="1208119302089087" type="BuyToUnlock1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6640146386677608" type="System">
+                            <param id="0" name="Seconds">5.1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8910285371082387" type="BuyToUnlock1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8250242548182311">
+            <conditions>
+                <condition id="0" name="Is Windows Phone app" sid="6317683793411507" type="WindowsPhone" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5508496960441196">
+                    <conditions>
+                        <condition id="2" name="On back" sid="5341264831925167" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9786389400418955" type="System">
+                            <param id="0" name="Layout">WelcomeLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

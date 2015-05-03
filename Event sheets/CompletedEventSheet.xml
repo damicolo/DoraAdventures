@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CompletedEventSheet</name>
+    <events>
+        <event-block sid="777209505607884">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="778819474899797" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1531938188728347" type="SuperFinalScoreText">
+                    <param id="0" name="Text">&quot;Final Score: &quot; &amp; round( FinalScore)</param>
+                </action>
+                <action id="3" name="Set at XY" sid="9142979461921786" type="LevelsArray">
+                    <param id="0" name="X">SelectedLevel</param>
+                    <param id="1" name="Y">DifficultyLevel</param>
+                    <param id="2" name="Value">max(LevelsArray.At(SelectedLevel,DifficultyLevel),2+BaloonsHit)</param>
+                </action>
+                <action id="3" name="Set at XY" sid="4769123936195595" type="LevelsArray">
+                    <param id="0" name="X">SelectedLevel+1</param>
+                    <param id="1" name="Y">DifficultyLevel</param>
+                    <param id="2" name="Value">max(LevelsArray.At(SelectedLevel+1,DifficultyLevel),1)</param>
+                </action>
+                <action id="0" name="Set local value" sid="7946977180160675" type="WebStorage">
+                    <param id="0" name="Key">DataStoreName</param>
+                    <param id="1" name="Value">LevelsArray.AsJSON</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5456238664136132">
+                    <conditions>
+                        <condition id="10" name="Has product" sid="6414016523826314" type="Windows8">
+                            <param id="0" name="Product ID">product_id</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set visible" sid="6139596785371314" type="Windows8Advertising">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="6153374114086965">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8978994784759957" type="Touch">
+                    <param id="0" name="Object">CompletedText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3050257059591495">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6877349009635887" type="System">
+                            <param id="0" name="Variable">FinalScore</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">HighScoresArray.At(2,1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="7147657991877154" type="System">
+                            <param id="0" name="Layout">SaveNameLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2017858247729481">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="636342456564371" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5374718074179842" type="System">
+                            <param id="0" name="Layout">WelcomeLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8610420965467151">
+            <conditions>
+                <condition id="0" name="Is Windows Phone app" sid="8044224710990592" type="WindowsPhone" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4035524739719216">
+                    <conditions>
+                        <condition id="2" name="On back" sid="1540821530734056" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9357116958751258" type="System">
+                            <param id="0" name="Layout">WelcomeLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

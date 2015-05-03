@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>WelcomeEventSheet</name>
+    <events>
+        <comment>wp8 iap https://www.scirra.com/tutorials/593/windows-phone-games-with-construct-2/page-1</comment>
+        <variable constant="0" name="product_id" sid="5979232488962097" static="0" type="text">DoraAdventuresLevels</variable>
+        <variable constant="0" name="DifficultyLevel" sid="969466447498343" static="0" type="number">0</variable>
+        <variable constant="0" name="FullVersion" sid="2127806192554196" static="0" type="number">1</variable>
+        <event-group description="" sid="602149463454318" title="Init">
+            <sub-events>
+                <event-block sid="5795342833682668">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6590282836072061" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6805525891359164">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="1586501517115599" type="WebStorage">
+                                    <param id="0" name="Key">HighScoreStoreName</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Load" sid="7252310952062501" type="HighScoresArray">
+                                    <param id="0" name="JSON">WebStorage.LocalValue(HighScoreStoreName)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3793057892671746">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5449120756164327" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="2112956720899999" type="Function">
+                                    <param id="0" name="Name">&quot;SetDefaults&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7650612715962531">
+                            <conditions>
+                                <condition id="0" name="Is Windows 8 app" sid="6192992399018225" type="Windows8" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8363609143909045" type="System">
+                                    <param id="0" name="Variable">FullVersion</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="590472490309691" type="BuyText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="7077455119991374">
+                                    <conditions>
+                                        <condition id="10" name="Has product" sid="1513303169821727" type="Windows8">
+                                            <param id="0" name="Product ID">product_id</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="42010643677969" type="BuyText">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3489934954532087" type="System">
+                                            <param id="0" name="Variable">FullVersion</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="2" name="Set visible" sid="2015940864392735" type="Windows8Advertising">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="3354866994243572">
+                            <conditions>
+                                <condition id="0" name="Is Windows Phone app" sid="7188001722092352" type="WindowsPhone" />
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="7192122183618752" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;WP8 Requesting product list&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8142356733703465" type="System">
+                                    <param id="0" name="Variable">FullVersion</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="265125216316556" type="BuyText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="9" name="Request store listing" sid="3258866955214287" type="WindowsPhone" />
+                                <action id="2" name="Set visible" sid="4614249581687606" type="Windows8Advertising">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="79940155537009">
+                                    <conditions>
+                                        <condition id="10" name="Has product" sid="1423905791619883" type="WindowsPhone">
+                                            <param id="0" name="Product ID">product_id</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="14" name="Log" sid="6510242864150691" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Product available 1&quot;</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="6620524852176703" type="BuyText">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9351064752686571" type="System">
+                                            <param id="0" name="Variable">FullVersion</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="1443143606179326">
+            <conditions>
+                <condition id="0" name="On function" sid="4543220867416718" type="Function">
+                    <param id="0" name="Name">&quot;SetDefaults&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set at XY" sid="5538060966136246" type="HighScoresArray">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;Bart&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="6555155894746641" type="HighScoresArray">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;Homer&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="6746772495969133" type="HighScoresArray">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;Lisa&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="8944208452650041" type="HighScoresArray">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">150000</param>
+                </action>
+                <action id="3" name="Set at XY" sid="2458653981681797" type="HighScoresArray">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">75000</param>
+                </action>
+                <action id="3" name="Set at XY" sid="9375169851325813" type="HighScoresArray">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">10000</param>
+                </action>
+                <action id="0" name="Set local value" sid="4467323797652039" type="WebStorage">
+                    <param id="0" name="Key">HighScoreStoreName</param>
+                    <param id="1" name="Value">HighScoresArray.AsJSON</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="233039784990894" title="Level Selection">
+            <sub-events>
+                <event-block any="1" sid="6537561514425338">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4455115376022702" type="Touch">
+                            <param id="0" name="Object">EasySprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2608428577862713" type="System">
+                            <param id="0" name="Variable">DifficultyLevel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="507955631324549" type="System">
+                            <param id="0" name="Variable">ChildrenHelp</param>
+                            <param id="1" name="Value">70</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="1582894100803819" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="8890424668079933">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="6463520794043077" type="Touch">
+                            <param id="0" name="Object">NormSprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2956179465764989" type="System">
+                            <param id="0" name="Variable">DifficultyLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2548739872471429" type="System">
+                            <param id="0" name="Variable">ChildrenHelp</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="4095947314863531" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="5953418217743129">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="5036870837591452" type="Touch">
+                            <param id="0" name="Object">HardSprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2555285642581344" type="System">
+                            <param id="0" name="Variable">DifficultyLevel</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3263046746221951" type="System">
+                            <param id="0" name="Variable">ChildrenHelp</param>
+                            <param id="1" name="Value">-30</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="6653253705708051" type="System">
+                            <param id="0" name="Layout">SelectLevelLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="3069274710362587">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="6956708095625045" type="Touch">
+                            <param id="0" name="Object">HighScoreSprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="2761813057178414" type="System">
+                            <param id="0" name="Layout">HighScoresLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2492841558247703" title="Windows 8 Purchase">
+            <sub-events>
+                <event-block sid="8361615040280962">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1513264199759208" type="Touch">
+                            <param id="0" name="Object">BuyText</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4830602422256618">
+                            <conditions>
+                                <condition id="0" name="Is Windows 8 app" sid="362084125193495" type="Windows8" />
+                                <condition id="10" inverted="1" name="Has product" sid="1595431954562375" type="Windows8">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="13" name="Purchase product" sid="5235694029414988" type="Windows8">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7681361480061833">
+                    <conditions>
+                        <condition id="12" name="On failed purchase" sid="8501933316449808" type="Windows8" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="7055988957220825" type="BuyText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1428352515374577" type="System">
+                            <param id="0" name="Variable">FullVersion</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="598808450153843">
+                    <conditions>
+                        <condition id="11" name="On successful purchase" sid="7094482697073956" type="Windows8" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7683393763755667">
+                            <conditions>
+                                <condition id="10" name="Has product" sid="580604777853438" type="Windows8">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="8880146879810034" type="BuyText">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2266049557946731" type="System">
+                                    <param id="0" name="Variable">FullVersion</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="857956832851415">
+                    <conditions>
+                        <condition id="6" name="On license changed" sid="4972711713574909" type="Windows8" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="531315502458624">
+                            <conditions>
+                                <condition id="10" name="Has product" sid="1353262424133725" type="Windows8">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="6304203500134122" type="BuyText">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9053865875847359" type="System">
+                                    <param id="0" name="Variable">FullVersion</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1806503091664689" title="Windows Phone Purchase">
+            <sub-events>
+                <event-block sid="8008635682622801">
+                    <conditions>
+                        <condition id="7" name="IAP purchase success" sid="3180335960433277" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="6046684518189607" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;WP8 IAP success&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2578433269632618" type="BuyText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9252370873674013" type="System">
+                            <param id="0" name="Variable">FullVersion</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="807579999613039">
+                    <conditions>
+                        <condition id="8" name="IAP purchase fail" sid="6656414733641381" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="6303572541515629" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;WP8 IAP ERROR&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1381176360331889" type="System">
+                            <param id="0" name="Variable">FullVersion</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1651265365929031">
+                    <conditions>
+                        <condition id="11" name="On store listing received" sid="6946020097295068" type="WindowsPhone" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="8336618977185235" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Product listing received&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4436786143380229">
+                            <conditions>
+                                <condition id="10" name="Has product" sid="4870656335771654" type="WindowsPhone">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="8984696871248612" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Product listing received - Product active&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="3026127126517987" type="BuyText">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5252496063977554" type="System">
+                                    <param id="0" name="Variable">FullVersion</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1828641134206683">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="6378564439757052" type="Touch">
+                            <param id="0" name="Object">BuyText</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="4105086149497944" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Beginning of purchase 1&quot;</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="6624649176996981" type="BuyText">
+                            <param id="0" name="Text">&quot;Beginning of purchase 1&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5531833498583124">
+                            <conditions>
+                                <condition id="0" name="Is Windows Phone app" sid="2215649506176371" type="WindowsPhone" />
+                                <condition id="10" inverted="1" name="Has product" sid="3957844878827398" type="WindowsPhone">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="4225720405852899" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Beginning of purchase 2&quot;</param>
+                                </action>
+                                <action id="8" name="Purchase product" sid="8416681339419929" type="WindowsPhone">
+                                    <param id="0" name="Product ID">product_id</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="4895150033003074" type="BuyText">
+                                    <param id="0" name="Text">&quot;Beginning of purchase 2&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="2364905397863699">
+            <conditions>
+                <condition id="2" name="On back" sid="5476478021491123" type="WindowsPhone" />
+            </conditions>
+            <actions>
+                <action id="1" name="Quit" sid="6059364871096557" type="WindowsPhone" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
