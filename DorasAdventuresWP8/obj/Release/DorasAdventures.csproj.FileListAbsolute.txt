@@ -1,0 +1,17 @@
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\App.g.cs
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\MainPage.g.cs
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\DorasAdventures.g.resources
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\DorasAdventures.Resources.AppResources.resources
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\DorasAdventures.csproj.GenerateResource.Cache
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\DorasAdventures.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\DorasAdventures.pdb
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\AppManifest.xaml
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\Properties\WMAppManifest.xml
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\DorasAdventures_Release_AnyCPU.xap
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\Microsoft.Advertising.Mobile.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\Microsoft.Advertising.Mobile.UI.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\Microsoft.Advertising.Mobile.UI.xml
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\Microsoft.Advertising.Mobile.xml
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\DorasAdventures.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\DorasAdventures.pdb
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\XapCacheFile.xml

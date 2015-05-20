@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-US" />
+  <App xmlns="" ProductID="{73c76fc4-c28d-4a4e-bf45-379fd7e37a57}" Title="Dora's Adventures" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Damicolo" Description="Dora's Adventures" Publisher="DorasAdventures" PublisherID="{8d05f738-2920-4cf8-a6b4-f9d6c1bf711c}">
+    <IconPath IsRelative="true" IsResource="false">Assets\Tiles\Icon_300.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_PHONEDIALER" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" ActivationPolicy="Resume" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="DorasAdventuresToken" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\Icon_150.png</SmallImageURI>
+          <Count>0</Count>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\Icon_300.png</BackgroundImageURI>
+          <Title>Dora's Adventures</Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\Icon_600.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
+          <DeviceLockImageURI>
+          </DeviceLockImageURI>
+          <HasLarge>True</HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>

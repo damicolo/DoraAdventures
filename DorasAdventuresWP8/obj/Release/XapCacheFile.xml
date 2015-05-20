@@ -1,0 +1,61 @@
+﻿<xapCache source="C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\DorasAdventures_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="17/05/2015 22:39:40">
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\obj\Release\DorasAdventures.dll" archivePath="DorasAdventures.dll" lastWriteTime="17/05/2015 22:39:39" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\Assets\Tiles\Icon_150.png" archivePath="Assets\Tiles\Icon_150.png" lastWriteTime="14/05/2015 23:10:00" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\Assets\Tiles\Icon_600.png" archivePath="Assets\Tiles\Icon_600.png" lastWriteTime="14/05/2015 23:10:00" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\index.html" archivePath="index.html" lastWriteTime="14/05/2015 21:31:23" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\data.json" archivePath="data.json" lastWriteTime="14/05/2015 23:21:13" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\c2runtime.js" archivePath="c2runtime.js" lastWriteTime="14/05/2015 21:31:23" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\jquery-2.1.1.min.js" archivePath="jquery-2.1.1.min.js" lastWriteTime="29/10/2014 14:05:58" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame1.png" archivePath="images\tiledbackgroundgame1.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\block.png" archivePath="images\block.png" lastWriteTime="14/05/2015 21:31:14" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\player-sheet0.png" archivePath="images\player-sheet0.png" lastWriteTime="14/05/2015 21:31:14" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\player-sheet1.png" archivePath="images\player-sheet1.png" lastWriteTime="14/05/2015 21:31:14" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\teddy-sheet0.png" archivePath="images\teddy-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\jump-sheet0.png" archivePath="images\jump-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\dontuse01-sheet0.png" archivePath="images\dontuse01-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\turtle-sheet0.png" archivePath="images\turtle-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\baloon-sheet0.png" archivePath="images\baloon-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\gmeoverback-sheet0.png" archivePath="images\gmeoverback-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\wonbaloon1-sheet0.png" archivePath="images\wonbaloon1-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\wonbaloon2-sheet0.png" archivePath="images\wonbaloon2-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\wonbaloon3-sheet0.png" archivePath="images\wonbaloon3-sheet0.png" lastWriteTime="14/05/2015 21:31:15" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\peppa-sheet0.png" archivePath="images\peppa-sheet0.png" lastWriteTime="14/05/2015 21:31:16" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\selectlevelback-sheet0.png" archivePath="images\selectlevelback-sheet0.png" lastWriteTime="14/05/2015 21:31:16" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\sprite-sheet0.png" archivePath="images\sprite-sheet0.png" lastWriteTime="14/05/2015 21:31:19" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\stopwatch-sheet0.png" archivePath="images\stopwatch-sheet0.png" lastWriteTime="14/05/2015 21:31:17" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tachimeter-sheet0.png" archivePath="images\tachimeter-sheet0.png" lastWriteTime="14/05/2015 21:31:16" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\speedthumb-sheet0.png" archivePath="images\speedthumb-sheet0.png" lastWriteTime="14/05/2015 21:31:16" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame2.png" archivePath="images\tiledbackgroundgame2.png" lastWriteTime="14/05/2015 21:31:17" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame3.png" archivePath="images\tiledbackgroundgame3.png" lastWriteTime="14/05/2015 21:31:17" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame4.png" archivePath="images\tiledbackgroundgame4.png" lastWriteTime="14/05/2015 21:31:18" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\sprite2-sheet0.png" archivePath="images\sprite2-sheet0.png" lastWriteTime="14/05/2015 21:31:18" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame5.png" archivePath="images\tiledbackgroundgame5.png" lastWriteTime="14/05/2015 21:31:18" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame6.png" archivePath="images\tiledbackgroundgame6.png" lastWriteTime="14/05/2015 21:31:19" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame7.png" archivePath="images\tiledbackgroundgame7.png" lastWriteTime="14/05/2015 21:31:19" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\tiledbackgroundgame8.png" archivePath="images\tiledbackgroundgame8.png" lastWriteTime="14/05/2015 21:31:19" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\cloud-sheet0.png" archivePath="images\cloud-sheet0.png" lastWriteTime="14/05/2015 21:31:20" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\easysprite-sheet0.png" archivePath="images\easysprite-sheet0.png" lastWriteTime="14/05/2015 21:31:20" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\normsprite-sheet0.png" archivePath="images\normsprite-sheet0.png" lastWriteTime="14/05/2015 21:31:20" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\hardsprite-sheet0.png" archivePath="images\hardsprite-sheet0.png" lastWriteTime="14/05/2015 21:31:20" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\completedback-sheet0.png" archivePath="images\completedback-sheet0.png" lastWriteTime="14/05/2015 21:31:20" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\gameoverback-sheet0.png" archivePath="images\gameoverback-sheet0.png" lastWriteTime="14/05/2015 21:31:21" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\sprite5-sheet0.png" archivePath="images\sprite5-sheet0.png" lastWriteTime="14/05/2015 21:31:21" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\cupsilver-sheet0.png" archivePath="images\cupsilver-sheet0.png" lastWriteTime="14/05/2015 21:31:21" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\cupbronze-sheet0.png" archivePath="images\cupbronze-sheet0.png" lastWriteTime="14/05/2015 21:31:22" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\cupgold-sheet0.png" archivePath="images\cupgold-sheet0.png" lastWriteTime="14/05/2015 21:31:23" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\highscoresback-sheet0.png" archivePath="images\highscoresback-sheet0.png" lastWriteTime="14/05/2015 21:31:23" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\images\highscoresprite-sheet0.png" archivePath="images\highscoresprite-sheet0.png" lastWriteTime="14/05/2015 21:31:23" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\icon-16.png" archivePath="icon-16.png" lastWriteTime="29/07/2014 18:53:22" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\icon-32.png" archivePath="icon-32.png" lastWriteTime="29/07/2014 18:53:22" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\icon-114.png" archivePath="icon-114.png" lastWriteTime="29/07/2014 18:53:22" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\icon-128.png" archivePath="icon-128.png" lastWriteTime="29/07/2014 18:53:22" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\icon-256.png" archivePath="icon-256.png" lastWriteTime="29/07/2014 18:53:22" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\loading-logo.png" archivePath="loading-logo.png" lastWriteTime="29/07/2014 18:53:22" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="14/05/2015 23:18:57" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.dll" archivePath="Microsoft.Advertising.Mobile.dll" lastWriteTime="16/09/2013 11:09:00" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.dll" archivePath="Microsoft.Advertising.Mobile.UI.dll" lastWriteTime="16/09/2013 11:09:00" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.xml" archivePath="Microsoft.Advertising.Mobile.UI.xml" lastWriteTime="16/09/2013 11:13:06" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.xml" archivePath="Microsoft.Advertising.Mobile.xml" lastWriteTime="16/09/2013 11:13:06" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\Assets\Tiles\Icon_300.png" archivePath="Assets\Tiles\Icon_300.png" lastWriteTime="14/05/2015 23:10:00" />
+  <file source="C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="17/05/2015 22:39:40" />
+</xapCache>

@@ -1,0 +1,17 @@
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\DorasAdventures.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\DorasAdventures.pdb
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\AppManifest.xaml
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\DorasAdventures_Debug_AnyCPU.xap
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\App.g.cs
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\MainPage.g.cs
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\DorasAdventures.g.resources
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\DorasAdventures.Resources.AppResources.resources
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\DorasAdventures.csproj.GenerateResource.Cache
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\DorasAdventures.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\DorasAdventures.pdb
+C:\Users\Damiano\Desktop\Dora's Adventures\obj\Debug\XapCacheFile.xml
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\Microsoft.Advertising.Mobile.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\Microsoft.Advertising.Mobile.UI.dll
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\Microsoft.Advertising.Mobile.UI.xml
+C:\Users\Damiano\Desktop\Dora's Adventures\Bin\Debug\Microsoft.Advertising.Mobile.xml
